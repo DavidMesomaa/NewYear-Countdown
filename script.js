@@ -3,8 +3,10 @@ const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 
-const currentYear = new Date().getFullYear();
-const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
+const currentYear = new Date().getFullYear() + 1;
+document.getElementById("year").innerHTML = currentYear;
+
+const newYearTime = new Date(`January 01 ${currentYear} 00:00:00`);
 
 function updateCountDown() {
     const currentTime = new Date();
@@ -19,6 +21,10 @@ function updateCountDown() {
     hours.innerHTML = h < 10 ? '0' + h : h;
     minutes.innerHTML = m < 10 ? '0' + m : m;
     seconds.innerHTML = s < 10 ? '0' + s : s;
+
+    if (newYearTime === currentTime) {
+        alert("Happy New Year!! Let's Continue The Journey.")
+    }
 }
 
 setInterval(updateCountDown, 1000);

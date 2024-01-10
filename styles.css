@@ -25,6 +25,7 @@ h1 {
     margin: -150px 0 48px;
 }
 .countdown {
+    margin-top: 2rem;
     display: flex;
     transform: scale(2);
     border: 1px solid transparent;
